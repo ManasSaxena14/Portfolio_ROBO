@@ -1,0 +1,351 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* Custom styles using CSS variables for Tailwind v4 */
+@theme {
+  --color-space-black: #050508;
+  --color-space-dark: #0d0d14;
+  --color-space-gray: #151525;
+  --color-neon-cyan: #00fff5;
+  --color-neon-purple: #bf00ff;
+  --color-electric-blue: #4d7cff;
+  --color-text-primary: #f8f9fa;
+  --color-text-secondary: #94a3b8;
+
+  /* New robotic/metallic colors */
+  --color-steel-gray: #2d2d3d;
+  --color-chrome-silver: #e2e8f0;
+  --color-terminal-green: #39ff14;
+  --color-warning-amber: #ffaa00;
+
+  --font-orbitron: 'Orbitron', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-syne: 'Syne', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --animate-pulse-glow: pulseGlow 2s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-scan: scanLine 3s linear infinite;
+  --animate-glitch: glitch 0.5s ease-in-out;
+  --animate-circuit: circuitPulse 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(0, 255, 245, 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 40px rgba(0, 255, 245, 0.8);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes scanLine {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes glitch {
+
+  0%,
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+
+  20% {
+    transform: translate(-2px, 2px);
+    opacity: 0.8;
+  }
+
+  40% {
+    transform: translate(2px, -2px);
+    opacity: 0.9;
+  }
+
+  60% {
+    transform: translate(-1px, 1px);
+    opacity: 0.85;
+  }
+
+  80% {
+    transform: translate(1px, -1px);
+    opacity: 0.95;
+  }
+}
+
+@keyframes circuitPulse {
+
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes borderTrace {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+/* Base styles */
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-space-black);
+  color: var(--color-text-secondary);
+  font-family: var(--font-inter);
+  overflow-x: hidden;
+  letter-spacing: -0.01em;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* GPU acceleration for animated elements */
+.animate-pulse,
+.animate-float,
+[class*="motion"],
+[data-framer-component-type] {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-text-primary);
+  font-family: var(--font-syne);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-space-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-neon-cyan);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-electric-blue);
+}
+
+/* Utility classes */
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 255, 245, 0.5);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(191, 0, 255, 0.5);
+}
+
+.glow-blue {
+  box-shadow: 0 0 20px rgba(77, 124, 255, 0.5);
+}
+
+.neon-border {
+  border: 1px solid transparent;
+  background: linear-gradient(#12121a, #12121a) padding-box,
+    linear-gradient(135deg, #00fff5, #bf00ff) border-box;
+}
+
+.hologram {
+  position: relative;
+  background: linear-gradient(135deg, rgba(0, 255, 245, 0.1), rgba(191, 0, 255, 0.1));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 245, 0.3);
+}
+
+/* Robotic theme utilities */
+.circuit-border {
+  position: relative;
+  border: 1px solid var(--color-steel-gray);
+}
+
+.circuit-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(90deg,
+      transparent,
+      var(--color-neon-cyan),
+      transparent);
+  background-size: 200% 100%;
+  animation: borderTrace 3s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  border-radius: inherit;
+}
+
+.circuit-border:hover::before {
+  opacity: 1;
+}
+
+.scan-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.scan-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(0, 255, 245, 0.8),
+      transparent);
+  animation: scanLine 3s linear infinite;
+  pointer-events: none;
+}
+
+.glitch-text {
+  position: relative;
+}
+
+.glitch-text:hover {
+  animation: glitch 0.3s ease-in-out;
+}
+
+.terminal-text {
+  font-family: var(--font-mono);
+  color: var(--color-terminal-green);
+  text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+}
+
+.metallic-surface {
+  background: linear-gradient(135deg,
+      var(--color-space-dark) 0%,
+      var(--color-steel-gray) 50%,
+      var(--color-space-dark) 100%);
+  border: 1px solid var(--color-steel-gray);
+}
+
+.robot-frame {
+  position: relative;
+  border: 2px solid var(--color-steel-gray);
+}
+
+.robot-frame::before,
+.robot-frame::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--color-neon-cyan);
+}
+
+.robot-frame::before {
+  top: -4px;
+  left: -4px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.robot-frame::after {
+  bottom: -4px;
+  right: -4px;
+  border-left: none;
+  border-top: none;
+}
+
+/* Proficiency bar styles */
+.proficiency-bar {
+  height: 4px;
+  background-color: var(--color-space-gray);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.proficiency-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-neon-cyan), var(--color-electric-blue));
+  border-radius: 2px;
+  transition: width 0.5s ease-out;
+}
+
+/* Circuit pattern background */
+.circuit-pattern {
+  background-image:
+    linear-gradient(rgba(0, 255, 245, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 245, 0.03) 1px, transparent 1px),
+    radial-gradient(circle at 25% 25%, rgba(0, 255, 245, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(191, 0, 255, 0.05) 0%, transparent 50%);
+  background-size: 50px 50px, 50px 50px, 100% 100%, 100% 100%;
+}
+
+/* Download button style */
+.download-btn {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-steel-gray), var(--color-space-dark));
+  border: 1px solid var(--color-neon-cyan);
+  transition: all 0.3s ease;
+}
+
+.download-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(0, 255, 245, 0.2),
+      transparent);
+  transition: left 0.5s ease;
+}
+
+.download-btn:hover::before {
+  left: 100%;
+}
+
+.download-btn:hover {
+  box-shadow: 0 0 30px rgba(0, 255, 245, 0.4);
+  border-color: var(--color-electric-blue);
+}
