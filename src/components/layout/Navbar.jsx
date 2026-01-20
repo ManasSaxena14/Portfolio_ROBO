@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
+import logo from '../../assets/LOGO.png';
 
 const navLinks = [
     { label: "Home", href: "#hero" },
@@ -40,7 +41,7 @@ const Navbar = () => {
                     whileHover={{ scale: 1.05 }}
                 >
                     <img
-                        src="/src/assets/LOGO.png"
+                        src={logo}
                         alt="MS Logo"
                         className="h-10 w-auto object-contain glow-cyan rounded"
                     />

@@ -4,6 +4,7 @@ import { fadeInUp, staggerContainer, floatAnimation } from '../../animations/var
 import { magneticEffect, glitchText } from '../../animations/gsap';
 import { FiDownload } from 'react-icons/fi';
 import { BsCpu, BsRobot } from 'react-icons/bs';
+import heroImage from '../../assets/HERO IMAGE.jpg';
 
 const Hero = () => {
     const [titleIndex, setTitleIndex] = useState(0);
@@ -195,7 +196,7 @@ const Hero = () => {
                         <div className="absolute inset-4 rounded-full bg-gradient-to-br from-neon-cyan via-electric-blue to-neon-purple flex items-center justify-center overflow-hidden">
                             <div className="w-full h-full flex items-center justify-center">
                                 <img
-                                    src="/src/assets/HERO IMAGE.jpg"
+                                    src={heroImage}
                                     alt="Logo"
                                     className="w-full h-full object-cover"
                                 />

@@ -1,9 +1,15 @@
+import project1 from '../assets/project1.png';
+import project2 from '../assets/project2.png';
+import project3 from '../assets/project3.png';
+import project4 from '../assets/project4.png';
+import project5 from '../assets/project5.png';
+
 export const projectsData = [
     {
         id: 1,
         title: "CARTIFY AI — Where AI Meets E-Commerce",
         description: "Intelligence – AI search, Recommendations, Conversational Chatbot. Commerce – Admin Dashboard, Payments, Orders, Security, Filter & Sort. Scalability – MERN stack, Cloud Deployment, Responsive UI.",
-        image: "/src/assets/project1.png",
+        image: project1,
         techStack: ["React", "Node.js", "MongoDB", "Express", "Stripe", "AI/ML"],
         keyFeatures: [
             "AI-powered product search and recommendations",
@@ -20,7 +26,7 @@ export const projectsData = [
         id: 2,
         title: "BidVerse — Premium Auction Platform",
         description: "Intelligence – Live auction system with real-time bidding, instant updates, and strict bid validation. Commerce – Secure JWT authentication, role-based access control, auction management, and post-auction reviews. Scalability – MERN stack architecture, full CRUD operations, cloud-ready backend, and responsive UI.",
-        image: "/src/assets/project2.png",
+        image: project2,
         techStack: ["React", "Node.js", "MongoDB", "Express", "JWT"],
         keyFeatures: [
             "Live real-time bidding system",
@@ -37,7 +43,7 @@ export const projectsData = [
         id: 3,
         title: "AxiomAI — GPT Intelligence",
         description: "Intelligence – Multi-Mode AI System with Standard Chat, Code Mode, and Deep Thinking with automatic, invisible model routing for optimal responses. Experience – Premium ChatGPT-Class UX with Glassmorphic UI, smart chat controls (Pin, Share, Delete), optimistic interactions, and global toast notifications. Security & Scalability – Production-Ready MERN Platform with secure JWT authentication, privacy-first architecture, zero-console policy, responsive design, and cloud-ready deployment.",
-        image: "/src/assets/project3.png",
+        image: project3,
         techStack: ["React", "Node.js", "MongoDB", "Express", "JWT", "OpenAI API"],
         keyFeatures: [
             "Multi-Mode AI System (Chat, Code, Deep Thinking)",
@@ -54,7 +60,7 @@ export const projectsData = [
         id: 4,
         title: "Crypto X Tracker — Live Market Intelligence",
         description: "Real-Time Tracking – Get live prices of the top 15 cryptocurrencies with multi-currency support (USD, EUR, INR). Smart Tools – Analyze trends with interactive charts and manage your portfolio with instant profit/loss calculations. Seamless Experience – Responsive, intuitive UI built with React.js for smooth use across devices.",
-        image: "/src/assets/project4.png",
+        image: project4,
         techStack: ["React", "JavaScript", "Chart.js", "Crypto API", "CSS3"],
         keyFeatures: [
             "Live prices for top 15 cryptocurrencies",
@@ -71,7 +77,7 @@ export const projectsData = [
         id: 5,
         title: "FinanceIQ — Smart Money Intelligence [UPCOMING]",
         description: "Intelligence – AI-driven expense classification and spending predictions powered by Python ML microservices. Automation – Smart budgeting recommendations, automated savings goals, and proactive financial alerts. Enterprise-Grade – Full-stack Next.js platform with PostgreSQL, Prisma ORM, secure JWT authentication, and visual financial dashboards.",
-        image: "/src/assets/project5.png",
+        image: project5,
         techStack: ["Next.js", "Node.js", "PostgreSQL", "Prisma", "Python", "AI/ML", "Tailwind CSS"],
         keyFeatures: [
             "AI-powered expense categorization",
