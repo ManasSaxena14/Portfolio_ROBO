@@ -153,8 +153,9 @@ const Hero = () => {
                         </motion.a>
                         <motion.a
                             ref={downloadBtnRef}
-                            href="/Manas_Saxena_CV.pdf"
-                            download
+                            href="https://drive.google.com/uc?export=download&id=1TAboedvHvRMVWciJEgV6m4ObnYZ__nwV"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="download-btn px-8 py-3 text-neon-cyan font-semibold rounded-lg flex items-center gap-2"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
