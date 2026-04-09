@@ -1,12 +1,29 @@
+import project6 from '../assets/project6.png';
 import project1 from '../assets/project1.png';
 import project2 from '../assets/project2.png';
 import project3 from '../assets/project3.png';
 import project4 from '../assets/project4.png';
-import project5 from '../assets/project5.png';
 
 export const projectsData = [
     {
         id: 1,
+        title: "FinSight AI: Intelligent Financial Forecasting & Advisory System",
+        description: "Intelligence – Multi-month forecasting and dynamic financial health scoring. Protection – Dual-layer anomaly detection flagging unusual spending. Advisory – Built-in conversational AI chatbot using Groq. Experience – Full-stack platform combining React UI with Python ML processing and predictive modeling.",
+        image: project6,
+        techStack: ["React", "Python", "Machine Learning", "Groq AI", "Isolation Forest", "FastAPI"],
+        keyFeatures: [
+            "Predict expenses for the next 1-12 months with seasonal trend analysis",
+            "Dual-Layer Anomaly Detection (Z-score & Isolation Forest)",
+            "AI Financial Advisor powered by Groq LLM",
+            "Financial Health Scoring via risk-assessment GBM models",
+            "Comparative Peer Analysis & Spending Archetypes",
+            "Full React dashboard visualizing multi-dimensional ML insights"
+        ],
+        liveUrl: "https://finsight-ai-intelligent-financial.vercel.app",
+        githubUrl: "https://github.com/ManasSaxena14/FinSight-AI-Intelligent-Financial-Forecasting-Advisory-System.git"
+    },
+    {
+        id: 2,
         title: "CARTIFY AI — Where AI Meets E-Commerce",
         description: "Intelligence – AI search, Recommendations, Conversational Chatbot. Commerce – Admin Dashboard, Payments, Orders, Security, Filter & Sort. Scalability – MERN stack, Cloud Deployment, Responsive UI.",
         image: project1,
@@ -23,7 +40,7 @@ export const projectsData = [
         githubUrl: "https://github.com/ManasSaxena14/CARTIFY-AI"
     },
     {
-        id: 2,
+        id: 3,
         title: "BidVerse — Premium Auction Platform",
         description: "Intelligence – Live auction system with real-time bidding, instant updates, and strict bid validation. Commerce – Secure JWT authentication, role-based access control, auction management, and post-auction reviews. Scalability – MERN stack architecture, full CRUD operations, cloud-ready backend, and responsive UI.",
         image: project2,
@@ -40,7 +57,7 @@ export const projectsData = [
         githubUrl: "https://github.com/ManasSaxena14/BIDVERSE---AUCTION-PLATFORM"
     },
     {
-        id: 3,
+        id: 4,
         title: "AxiomAI — GPT Intelligence",
         description: "Intelligence – Multi-Mode AI System with Standard Chat, Code Mode, and Deep Thinking with automatic, invisible model routing for optimal responses. Experience – Premium ChatGPT-Class UX with Glassmorphic UI, smart chat controls (Pin, Share, Delete), optimistic interactions, and global toast notifications. Security & Scalability – Production-Ready MERN Platform with secure JWT authentication, privacy-first architecture, zero-console policy, responsive design, and cloud-ready deployment.",
         image: project3,
@@ -57,7 +74,7 @@ export const projectsData = [
         githubUrl: "https://github.com/ManasSaxena14/AXIOM_AI--LLM-.git"
     },
     {
-        id: 4,
+        id: 5,
         title: "Crypto X Tracker — Live Market Intelligence",
         description: "Real-Time Tracking – Get live prices of the top 15 cryptocurrencies with multi-currency support (USD, EUR, INR). Smart Tools – Analyze trends with interactive charts and manage your portfolio with instant profit/loss calculations. Seamless Experience – Responsive, intuitive UI built with React.js for smooth use across devices.",
         image: project4,
@@ -72,23 +89,5 @@ export const projectsData = [
         ],
         liveUrl: "https://crypto-x-tracker.netlify.app",
         githubUrl: "https://github.com/ManasSaxena14/React-SEM-2-PROJECT"
-    },
-    {
-        id: 5,
-        title: "FinanceIQ — Smart Money Intelligence [UPCOMING]",
-        description: "Intelligence – AI-driven expense classification and spending predictions powered by Python ML microservices. Automation – Smart budgeting recommendations, automated savings goals, and proactive financial alerts. Enterprise-Grade – Full-stack Next.js platform with PostgreSQL, Prisma ORM, secure JWT authentication, and visual financial dashboards.",
-        image: project5,
-        techStack: ["Next.js", "Node.js", "PostgreSQL", "Prisma", "Python", "AI/ML", "Tailwind CSS"],
-        keyFeatures: [
-            "AI-powered expense categorization",
-            "Monthly spending predictions with ML",
-            "Smart budgeting & savings recommendations",
-            "Visual financial dashboards with Recharts",
-            "Secure JWT authentication (Access + Refresh)",
-            "Proactive financial alerts & insights"
-        ],
-        liveUrl: "#",
-        githubUrl: "#",
-        upcoming: true
     }
 ];

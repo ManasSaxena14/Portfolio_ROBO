@@ -32,12 +32,12 @@ const AnimatedBackground = () => {
             x: Math.random() * 100,
             y: Math.random() * 100,
             size: Math.random() * 300 + 200,
-            color: i % 2 === 0 ? 'rgba(0, 255, 245, 0.1)' : 'rgba(191, 0, 255, 0.1)'
+            color: i % 2 === 0 ? 'rgba(0, 255, 245, 0.15)' : 'rgba(191, 0, 255, 0.15)'
         }));
     }, []);
 
     return (
-        <div className="fixed inset-0 -z-10 overflow-hidden bg-space-black">
+        <div className="fixed inset-0 -z-10 overflow-hidden bg-space-black pointer-events-none">
             {/* Base Background */}
             <div className="absolute inset-0 bg-[#020205]" />
 
@@ -45,7 +45,7 @@ const AnimatedBackground = () => {
             {stars.map((star) => (
                 <motion.div
                     key={`star-${star.id}`}
-                    className="absolute rounded-full bg-white"
+                    className="absolute rounded-full bg-white will-change-opacity"
                     style={{
                         left: `${star.x}%`,
                         top: `${star.y}%`,
@@ -58,7 +58,7 @@ const AnimatedBackground = () => {
                     transition={{
                         duration: Math.random() * 3 + 2,
                         repeat: Infinity,
-                        ease: "easeInOut"
+                        ease: "linear"
                     }}
                 />
             ))}
@@ -80,13 +80,13 @@ const AnimatedBackground = () => {
             {energyNodes.map((node) => (
                 <motion.div
                     key={`energy-${node.id}`}
-                    className="absolute rounded-full blur-[100px]"
+                    className="absolute rounded-full will-change-transform"
                     style={{
                         left: `${node.x}%`,
                         top: `${node.y}%`,
                         width: `${node.size}px`,
                         height: `${node.size}px`,
-                        backgroundColor: node.color
+                        background: `radial-gradient(circle, ${node.color} 0%, transparent 70%)`
                     }}
                     animate={{
                         scale: [1, 1.2, 1],
@@ -97,7 +97,7 @@ const AnimatedBackground = () => {
                     transition={{
                         duration: Math.random() * 10 + 10,
                         repeat: Infinity,
-                        ease: "easeInOut"
+                        ease: "linear"
                     }}
                 />
             ))}
@@ -106,18 +106,15 @@ const AnimatedBackground = () => {
             {particles.map((particle) => (
                 <motion.div
                     key={`particle-${particle.id}`}
-                    className="absolute rounded-full"
+                    className="absolute rounded-full will-change-transform"
                     style={{
                         left: `${particle.x}%`,
                         top: `${particle.y}%`,
                         width: `${particle.size}px`,
                         height: `${particle.size}px`,
                         background: particle.id % 3 === 0
-                            ? 'linear-gradient(135deg, #bf00ff, transparent)'
-                            : 'linear-gradient(135deg, #00fff5, transparent)',
-                        boxShadow: particle.id % 3 === 0
-                            ? `0 0 ${particle.size * 4}px rgba(191, 0, 255, 0.5)`
-                            : `0 0 ${particle.size * 4}px rgba(0, 255, 245, 0.3)`,
+                            ? 'radial-gradient(circle, rgba(191,0,255,0.8) 0%, transparent 70%)'
+                            : 'radial-gradient(circle, rgba(0,255,245,0.8) 0%, transparent 70%)',
                     }}
                     animate={{
                         y: [0, -100, 0],
@@ -138,18 +135,18 @@ const AnimatedBackground = () => {
             {[...Array(5)].map((_, i) => (
                 <motion.div
                     key={`line-${i}`}
-                    className="absolute h-px w-64 bg-gradient-to-r from-transparent via-electric-blue to-transparent opacity-20"
+                    className="absolute h-px w-64 bg-gradient-to-r from-transparent via-electric-blue to-transparent opacity-20 will-change-transform"
                     style={{
                         top: `${Math.random() * 100}%`,
-                        left: '-10%'
+                        left: 0
                     }}
                     animate={{
-                        left: ['-20%', '120%']
+                        x: ['-20vw', '120vw']
                     }}
                     transition={{
                         duration: Math.random() * 2 + 1,
                         repeat: Infinity,
-                        ease: "easeInOut",
+                        ease: "linear",
                         delay: Math.random() * 5
                     }}
                 />
@@ -157,9 +154,10 @@ const AnimatedBackground = () => {
 
             {/* Scanning Laser */}
             <motion.div
-                className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-neon-cyan/40 to-transparent"
+                className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-neon-cyan/40 to-transparent will-change-transform"
+                style={{ top: 0 }}
                 animate={{
-                    top: ['-10%', '110%']
+                    y: ['-10vh', '110vh']
                 }}
                 transition={{
                     duration: 12,
