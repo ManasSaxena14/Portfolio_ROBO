@@ -157,7 +157,7 @@ const Hero = () => {
                         </motion.a>
                         <motion.a
                             ref={downloadBtnRef}
-                            href="https://drive.google.com/file/d/11ZtoUAAafmtGz8L12mtKpquivL5s2KJj/view?usp=drive_link"
+                            href="https://drive.google.com/file/d/1TAboedvHvRMVWciJEgV6m4ObnYZ__nwV/view?usp=sharing"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="download-btn px-8 py-3.5 text-neon-cyan font-bold rounded-lg flex items-center gap-2 bg-space-gray/50 backdrop-blur-md"
